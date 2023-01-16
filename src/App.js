@@ -6,6 +6,9 @@ function App() {
   const [todos,setTodos]= useState('')
   return (
     <div className="App">
+
+      <input type="text" />
+      <button></button>
    
     </div>
   );
