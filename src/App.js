@@ -10,11 +10,8 @@ function App() {
     setTodo("");
   };
 
-  const deleteTodo = (text) => {
-       const newTodo = todos.filter(todo=>{
-        return todo !==text
-       } )
-       setTodos(newTodo)
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
 
     return todo;
   };
@@ -33,7 +30,7 @@ function App() {
         <ul>
           {todos.map((todo, id) => (
             <div>
-              <li key={todo}>{todo}</li>
+              <li key={todo.id}>{todo}</li>
               <button onClick={() => deleteTodo(todo.id)}>Delete todo</button>
             </div>
           ))}
