@@ -20,6 +20,15 @@ const App = () => {
         value={todo}
       />
       <button onClick={addTodo}>Add todo</button>
+
+      {todos?. length > 0 ? (<ul>
+       <li>
+        {todo}
+       </li>
+
+      </ul>):(<div>
+        <p>Task not found</p>
+      </div>)}
     </div>
   );
 };
