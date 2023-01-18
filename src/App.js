@@ -5,11 +5,8 @@ const App = () => {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
 
-  const addTodo = () => {
-    if (todo !== "") {
-      setTodos([...todos, todo]);
-      setTodo("");
-    }
+
+  const handleRemove
   };
   return (
     <div>
@@ -21,11 +18,11 @@ const App = () => {
       />
       <button onClick={addTodo}>Add todo</button>
 
-      {todos.map(todo,id) => (
+      {todos.map(todo,id => (
         <ul>
           <li>{todo}</li>
           <button onClick={handleRemove}>Delete</button>
-          <button onClick={addTodo}>Edit</button>
+          <button onClick={handleEdit}>Edit</button>
         </ul>
       ))}
     </div>
