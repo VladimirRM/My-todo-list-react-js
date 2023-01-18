@@ -8,7 +8,7 @@ const App = () => {
   const addTodo = () => {
     if (todo !== "") {
       setTodos([...todos, todo]);
-      setTodo('')
+      setTodo("");
     }
   };
   return (
@@ -21,16 +21,13 @@ const App = () => {
       />
       <button onClick={addTodo}>Add todo</button>
 
-      {todos?. length > 0 ? (<ul>
-        {todos.map(todo,id=>(
-          <div>
-            <li key={todo.id}>{todo}</li>
-          </div>
-        ))}
-
-      </ul>):(<div>
-        <p>Task not found</p>
-      </div>)}
+      {todos.map(todo,id) => (
+        <ul>
+          <li>{todo}</li>
+          <button onClick={handleRemove}>Delete</button>
+          <button onClick={addTodo}>Edit</button>
+        </ul>
+      ))}
     </div>
   );
 };
