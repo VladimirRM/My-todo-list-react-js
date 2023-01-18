@@ -7,7 +7,8 @@ const App = () => {
      return(
       <div>
         <input type="text"
-        placeholder="Enter something" />
+        placeholder="Enter something" 
+        onChange={(e)=>setTodo(e.target.value)}/>
       </div>
      )
  
