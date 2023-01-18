@@ -5,9 +5,11 @@ const App = () => {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
 
-  const addTodo =()=>{
-    setTodos([...todos,todo])
-  }
+  const addTodo = () => {
+    if (todo !== "") {
+      setTodos([...todos, todo]);
+    }
+  };
   return (
     <div>
       <input
