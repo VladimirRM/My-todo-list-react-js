@@ -8,6 +8,7 @@ const App = () => {
   const addTodo = () => {
     if (todo !== "") {
       setTodos([...todos, todo]);
+      setTodo('')
     }
   };
   return (
