@@ -4,11 +4,10 @@ const App = () => {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
 
-
-
-  const addTodo =()=>{
-      
-  }
+  const addTodo = () => {
+    setTodos([...todos, todo]);
+    // setTodos('')
+  };
   return (
     <div>
       <input
@@ -19,6 +18,7 @@ const App = () => {
       />
       <button onClick={addTodo}>Add todo</button>
     </div>
+
   );
 };
 
