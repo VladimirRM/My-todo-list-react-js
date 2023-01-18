@@ -22,9 +22,11 @@ const App = () => {
       <button onClick={addTodo}>Add todo</button>
 
       {todos?. length > 0 ? (<ul>
-       <li>
-        {todo}
-       </li>
+        {todos.map(todo,id=>(
+          <div>
+            <li key={todo.id}>{todo}</li>
+          </div>
+        ))}
 
       </ul>):(<div>
         <p>Task not found</p>
