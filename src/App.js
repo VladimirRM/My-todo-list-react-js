@@ -3,14 +3,17 @@ import "./index.css";
 
 const App = () => {
   const [todo, setTodo] = useState("");
-  const [todos, setTodos] = useState("");
+  const [todos, setTodos] = useState([]);
 
   const addTodo = () => {
     setTodos([...todos, todo]);
-    setTodo("");
+    
   };
   const handleRemove = (id) => {
-    const newTodo = [...todos].filter(todo, (id) => todo.id !== id);
+    const newTodo = todos.filter(todo, (id) => {
+      return todo.id !== id;
+    });
+
     setTodos(newTodo);
   };
   const handleEdit = (id) => {
