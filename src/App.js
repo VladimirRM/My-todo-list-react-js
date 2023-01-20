@@ -12,6 +12,9 @@ const App = () => {
     const handleSubmit =()=>{
          
     }
+    const handleChange =()=>{
+         
+    }
   return (
     <div className='App'>
         <form onSubmit={handleSubmit}>
