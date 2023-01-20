@@ -5,9 +5,13 @@ const App = () => {
   const [todos, setTodos] = useState([]);
 
   const addTodo = () => {
- setTodos([...todos, input])
-     setInput('')
+    setTodos([...todos, input]);
+    setInput("");
   };
+  const removeTodo =()=>{
+    
+  }
+
 
   return (
     <div>
@@ -22,6 +26,7 @@ const App = () => {
         <ul>
           <div>
             <li key={input.index}>{input}</li>
+            <button onClick={()=>removeTodo(input.id)}>Delete</button>
           </div>
         </ul>
       ))}
