@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 
 const App = () => {
-  const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
+  const [todos, setTodos] = useState([]);
 
-
-  const 
+  const addTodo = () => {
+ setTodos([...todos, input])
+     setInput('')
+  };
 
   return (
     <div>
@@ -14,13 +16,15 @@ const App = () => {
         onChange={(e) => setInput(e.target.value)}
         value={input}
       />
+      <button onClick={addTodo}>Add</button>
 
-      {todos.map(item, (i) => (
+      {todos.map((input, index) => (
         <ul>
-          <li key={item.i}>{input}</li>
+          <div>
+            <li key={input.index}>{input}</li>
+          </div>
         </ul>
       ))}
-      <button onClick={addTodo}>Add</button>
     </div>
   );
 };

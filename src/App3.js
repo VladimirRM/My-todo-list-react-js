@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
 const App = () => {
   const [todo, setTodo] = useState("");
@@ -44,4 +44,4 @@ const App = () => {
   );
 };
 
-export default App;
+// export default App;
