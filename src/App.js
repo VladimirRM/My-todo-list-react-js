@@ -19,7 +19,7 @@ const App = () => {
   const editTodo = (id) => {
       const edit = input
       setTodos(todos.map(input=>{
-        if(input.id===id){
+        if(edit.id===id){
             input.edit = edit
         }
         return input
