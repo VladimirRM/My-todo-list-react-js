@@ -1,30 +1,28 @@
-import React,{useState} from 'react'
+import React, { useState } from "react";
 
 const App = () => {
+  const [todos, setTodos] = useState([]);
+  const [input, setInput] = useState("");
 
-    const [todos,setTodos ]= useState([])
-    const [userInput,setUserInput]=useState('')
 
+  const 
 
-    const addTodo =()=>{
-
-    }
-    const handleSubmit =()=>{
-         
-    }
-    const handleChange =()=>{
-         
-    }
   return (
-    <div className='App'>
-        <form onSubmit={handleSubmit}>
-           <input type='text'
-           onChange={handleChange}
-           value={userInput}
-           placeholder="Enter task" />  
-        </form>
-    </div>
-  )
-}
+    <div>
+      <input
+        type="text"
+        onChange={(e) => setInput(e.target.value)}
+        value={input}
+      />
 
-export default App
+      {todos.map(item, (i) => (
+        <ul>
+          <li key={item.i}>{input}</li>
+        </ul>
+      ))}
+      <button onClick={addTodo}>Add</button>
+    </div>
+  );
+};
+
+export default App;
