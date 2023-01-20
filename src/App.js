@@ -5,10 +5,10 @@ const App = () => {
   const [todos, setTodos] = useState([]);
 
   const addTodo = () => {
-   const newTodo = {
-    id:Math.random(),
-    title:input,
-   }
+    const newTodo = {
+      id: Math.random(),
+      title: input,
+    };
     setTodos([...todos, newTodo]);
     setInput("");
   };
@@ -16,15 +16,17 @@ const App = () => {
     const newTodo = todos.filter((input) => input.id !== id);
     setTodos(newTodo);
   };
-  const editTodo = (id) => {
-      const edit = input
-      setTodos(todos.map(input=>{
-        if(edit.id===id){
-            input.edit = edit
-        }
-        return input
-      })) 
 
+  const editTodo = (id) => {
+    const edit = input;
+    setInput(
+      todos.map((input) => {
+        if (edit.id === id) {
+          input.edit = input;
+        }
+        return input;
+      })
+    );
   };
 
   return (
@@ -36,7 +38,7 @@ const App = () => {
       />
       <button onClick={addTodo}>Add</button>
       <ul>
-        {todos.map((input,id) => (
+        {todos.map((input, id) => (
           <li key={input.id}>
             {input.title}
             <button onClick={() => removeTodo(input.id)}>Delete</button>
