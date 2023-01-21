@@ -16,18 +16,18 @@ const App = () => {
   //   const newTodo = todos.filter((input) => input.id !== id);
   //   setTodos(newTodo);
   // };
-  const remove = id => {
-    setTodos(todos.filter(todo => todo.id !== id));
+  const removeTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   const editTodo = (id) => {
-    const edit = input;
-    setInput(
-      todos.map((input) => {
-        if (edit.id === id) {
-          edit.input = input;
+    const text = prompt("enter text:");
+    setTodos(
+      todos.map((obj, id) => {
+        if (todos.id === id) {
+          obj.text = text;
         }
-        return edit;
+        return obj;
       })
     );
   };
@@ -41,7 +41,7 @@ const App = () => {
       />
       <button onClick={addTodo}>Add</button>
       <ul>
-        {todos.map((input,id) => (
+        {todos.map((input, id) => (
           <li key={input.id}>
             {input.title}
             <button onClick={() => removeTodo(input.id)}>Delete</button>
