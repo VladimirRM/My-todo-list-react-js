@@ -50,6 +50,12 @@ const App = () => {
         {todos.map((input, id) => (
           <li key={input.id}>
             {input.title}
+            {edit == id ? 
+            <div>
+              <input type="text"
+              value={value} />
+            </div>:<div>
+              </div>}
             <button onClick={() => removeTodo(input.id)}>Delete</button>
             <button onClick={() => editTodo(input.id)}>Edit</button>
           </li>
