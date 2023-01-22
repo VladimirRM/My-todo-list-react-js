@@ -3,6 +3,9 @@ import React, { useState } from "react";
 const App = () => {
   const [input, setInput] = useState("");
   const [todos, setTodos] = useState([]);
+  const [edit, setEdit] = useState(null);
+  const [value, setValue] = useState('');
+
 
   const addTodo = () => {
     const newTodo = {
@@ -24,7 +27,7 @@ const App = () => {
     setTodos(
       todos.map((obj, id) => {
         if (obj.id === id) {
-          obj.text = text;
+          obj.text = input;
         }
         return obj;
       })
