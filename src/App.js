@@ -23,15 +23,7 @@ const App = () => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
   const editTodo = (id) => {
-    const text = prompt("enter text:");
-    setTodos(
-      todos.map((obj, id) => {
-        if (obj.id === id) {
-          obj.text = input;
-        }
-        return obj;
-      })
-    );
+ 
   };
 
   // const editTodo = (id) => {
