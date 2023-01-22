@@ -19,18 +19,29 @@ const App = () => {
   const removeTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
-
   const editTodo = (id) => {
     const text = prompt("enter text:");
     setTodos(
       todos.map((obj, id) => {
-        if (todos.id === id) {
+        if (obj.id === id) {
           obj.text = text;
         }
         return obj;
       })
     );
   };
+
+  // const editTodo = (id) => {
+  //   const text = prompt("enter text:");
+  //   setTodos(
+  //     todos.map((obj, id) => {
+  //       if (todos.id === id) {
+  //         obj.text = text;
+  //       }
+  //       return obj;
+  //     })
+  //   );
+  // };
 
   return (
     <div>
