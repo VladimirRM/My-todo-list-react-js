@@ -38,6 +38,16 @@ const App = () => {
     setEdit(id);
     setValue(title);
   };
+  const saveTodo = (id) => {
+    const newTodo = [...todos].map((input) => {
+      if (input.id === id) {
+        input.title = value;
+      }
+      return input;
+    });
+    setTodos(newTodo);
+    setEdit(null);
+  };
   return (
     <div>
       <input
@@ -62,15 +72,25 @@ const App = () => {
             )}
             {edit === input.id ? (
               <div>
-                <button onClick={saveTodo}>Save</button>
+                <button onClick={() => saveTodo(input.id)}>Save</button>
               </div>
             ) : (
+              <div>
+                           <button onClick={() => removeTodo(input.id)}>Delete</button>
+                <button onClick={() => editTodo(input.id, input.title)}>
+                  Edit
+                </button>
+              </div>
+            )}
+            {input.title === id ? (
               <div>
                 <button onClick={() => removeTodo(input.id)}>Delete</button>
                 <button onClick={() => editTodo(input.id, input.title)}>
                   Edit
                 </button>
               </div>
+            ) : (
+              <div></div>
             )}
           </li>
         ))}
