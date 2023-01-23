@@ -44,9 +44,12 @@ const App = () => {
         input.title = value;
       }
       return input;
+     
     });
     setTodos(newTodo);
     setEdit(null);
+
+
   };
   return (
     <div>
@@ -66,31 +69,33 @@ const App = () => {
                   value={value}
                   onChange={(e) => setValue(e.target.value)}
                 />
+                                 {/* <button onClick={() => removeTodo(input.id)}>Delete</button>
+                <button onClick={() => editTodo(input.id, input.title)}>
+                  Edit
+                </button> */}
               </div>
             ) : (
-              <div> {input.title}</div>
+              <div key={input.id}> {input.title}</div>
             )}
             {edit === input.id ? (
-              <div>
+              <div key={input.id}> 
                 <button onClick={() => saveTodo(input.id)}>Save</button>
               </div>
             ) : (
-              <div>
-                           <button onClick={() => removeTodo(input.id)}>Delete</button>
-                <button onClick={() => editTodo(input.id, input.title)}>
-                  Edit
-                </button>
+              <div key={input.id}>
+          
               </div>
             )}
-            {input.title === id ? (
-              <div>
+            {input.title ? (
+              <div key={input.id}>
                 <button onClick={() => removeTodo(input.id)}>Delete</button>
                 <button onClick={() => editTodo(input.id, input.title)}>
                   Edit
                 </button>
               </div>
             ) : (
-              <div></div>
+              <div
+              key={input.id}></div>
             )}
           </li>
         ))}
