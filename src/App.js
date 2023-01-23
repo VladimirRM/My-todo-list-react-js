@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "./index.css";
+import { v4 as uuidv4 } from "uuid";
 
 const App = () => {
   const [input, setInput] = useState("");
@@ -8,7 +10,7 @@ const App = () => {
 
   const addTodo = () => {
     const newTodo = {
-      id: Math.random(),
+      id: uuidv4(),
       title: input,
     };
     setTodos([...todos, newTodo]);
@@ -44,12 +46,9 @@ const App = () => {
         input.title = value;
       }
       return input;
-     
     });
     setTodos(newTodo);
     setEdit(null);
-
-
   };
   return (
     <div>
@@ -60,8 +59,8 @@ const App = () => {
       />
       <button onClick={addTodo}>Add</button>
       <ul>
-        {todos.map((input, id) => (
-          <li key={input.id}>
+        {todos.map((input) => (
+          <li key={uuidv4()}>
             {edit === input.id ? (
               <div>
                 <input
@@ -69,33 +68,21 @@ const App = () => {
                   value={value}
                   onChange={(e) => setValue(e.target.value)}
                 />
-                                 {/* <button onClick={() => removeTodo(input.id)}>Delete</button>
-                <button onClick={() => editTodo(input.id, input.title)}>
-                  Edit
-                </button> */}
               </div>
             ) : (
-              <div key={input.id}> {input.title}</div>
+              <div>{input.title}</div>
             )}
-            {edit === input.id ? (
-              <div key={input.id}> 
-                <button onClick={() => saveTodo(input.id)}>Save</button>
-              </div>
-            ) : (
-              <div key={input.id}>
-          
-              </div>
-            )}
+            {edit === input.id ? <div></div> : <div></div>}
             {input.title ? (
-              <div key={input.id}>
+              <div>
                 <button onClick={() => removeTodo(input.id)}>Delete</button>
                 <button onClick={() => editTodo(input.id, input.title)}>
                   Edit
                 </button>
+                <button onClick={() => saveTodo(input.id)}>Save</button>
               </div>
             ) : (
-              <div
-              key={input.id}></div>
+              <div></div>
             )}
           </li>
         ))}
