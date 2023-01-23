@@ -62,7 +62,7 @@ const App = () => {
             )}
             {edit === input.id ? (
               <div>
-                <button>Save</button>
+                <button onClick={saveTodo}>Save</button>
               </div>
             ) : (
               <div>
