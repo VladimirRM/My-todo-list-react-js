@@ -1,7 +1,7 @@
 // import React, { useState } from "react";
-import "./index.css";
-import { v4 as uuidv4 } from "uuid";
-import Button from "react-bootstrap/Button";
+// import "./index.css";
+// import { v4 as uuidv4 } from "uuid";
+// import Button from "react-bootstrap/Button";
 
 const App = () => {
   const [input, setInput] = useState("");
