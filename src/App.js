@@ -4,8 +4,14 @@ const App = () => {
 
   const [input,setInput]= useState('')
   const [todos,setTodos]= useState([])
-  const [input,setInput]= useState('')
-  const [input,setInput]= useState('')
+  const [edit,setEdit]= useState(null)
+  const [value,setValue]= useState('')
+
+const addTodo=()=>{
+  
+}
+
+
   return (
     <div>App</div>
   )
