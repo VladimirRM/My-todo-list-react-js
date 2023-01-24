@@ -8,12 +8,16 @@ const App = () => {
   const [value,setValue]= useState('')
 
 const addTodo=()=>{
-  
+
 }
 
 
   return (
-    <div>App</div>
+    <div>
+      <input type="text"
+      onChange={(e)=>setInput(e.target.value)}
+      value={input} />
+    </div>
   )
 }
 
