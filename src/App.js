@@ -16,8 +16,14 @@ const addTodo=()=>{
     setTodos([...todos,newTodo])
 
 }
-const deleteTodo =()=>{
-
+const deleteTodo =(id)=>{
+     setTodos(todos.filter(input=>input.id !==id))
+}
+const editTodo =(id)=>{
+     setTodos(todos.filter(input=>input.id !==id))
+}
+const saveTodo =(id)=>{
+     setTodos(todos.filter(input=>input.id !==id))
 }
 
 
@@ -28,10 +34,14 @@ const deleteTodo =()=>{
       value={input} />
       <button onClick={addTodo}>Add task</button>
 
-        
+        {todos.map(input,index=>(
+             <ul>
+              <li key={index}>{input.title}</li>
+             </ul>
+        ))}
 
       <button onClick={()=>deleteTodo(input.id)}>Delete</button>
-      <button onClick={()=>editTodo(input,id.input,title)}>Edit</button>
+      <button onClick={()=>editTodo(input,id)}>Edit</button>
       <button onClick={()=>saveTodo(input,id)}>Save</button>
 
     </div>
