@@ -5,7 +5,7 @@
 
 const App = () => {
   const [input, setInput] = useState("");
-  const [todos, setTodos] = useState([{ text: "" }]);
+  const [todos, setTodos] = useState([]);
   const [edit, setEdit] = useState(null);
   const [value, setValue] = useState("");
 
