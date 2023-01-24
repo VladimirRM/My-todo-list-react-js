@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "./index.css";
 import { v4 as uuidv4 } from "uuid";
+import Button from 'react-bootstrap/Button';
+
+
 
 const App = () => {
   const [input, setInput] = useState("");
@@ -15,6 +18,8 @@ const App = () => {
     };
     setTodos([...todos, newTodo]);
     setInput("");
+    
+    
   };
   // const removeTodo = (id) => {
   //   const newTodo = todos.filter((input) => input.id !== id);
@@ -50,6 +55,8 @@ const App = () => {
     setTodos(newTodo);
     setEdit(null);
   };
+  console.log('index')
+
   return (
     <div>
       <input
@@ -57,16 +64,19 @@ const App = () => {
         onChange={(e) => setInput(e.target.value)}
         value={input}
       />
-      <button onClick={addTodo}>Add</button>
+      <Button  variant="info"
+      onClick={addTodo}>Add</Button>
       <ul>
-        {todos.map((input) => (
-          <li key={uuidv4()}>
+        {todos.map((input,index) => (
+          <li key={index}>
+            
             {edit === input.id ? (
               <div>
                 <input
                   type="text"
                   value={value}
                   onChange={(e) => setValue(e.target.value)}
+                  
                 />
               </div>
             ) : (
