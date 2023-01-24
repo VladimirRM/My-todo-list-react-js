@@ -1,6 +1,8 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 const App = () => {
+
+  const [input,setInput]= useState('')
   return (
     <div>App</div>
   )
