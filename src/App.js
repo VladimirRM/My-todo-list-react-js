@@ -17,6 +17,7 @@ const addTodo=()=>{
       <input type="text"
       onChange={(e)=>setInput(e.target.value)}
       value={input} />
+      <button onClick={addTodo}>Add task</button>
     </div>
   )
 }
