@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 import { v4 as uuidv4 } from "uuid";
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 
 
 
@@ -85,11 +85,11 @@ const App = () => {
             {edit === input.id ? <div></div> : <div></div>}
             {input.title ? (
               <div>
-                <button onClick={() => removeTodo(input.id)}>Delete</button>
-                <button onClick={() => editTodo(input.id, input.title)}>
+                <Button variant="info" size='lg' onClick={() => removeTodo(input.id)}>Delete</Button>
+                <Button variant="info" size='lg'  onClick={() => editTodo(input.id, input.title)}>
                   Edit
-                </button>
-                <button onClick={() => saveTodo(input.id)}>Save</button>
+                </Button>
+                <Button  variant="info" size='lg'onClick={() => saveTodo(input.id)}>Save</Button>
               </div>
             ) : (
               <div></div>
