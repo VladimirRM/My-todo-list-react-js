@@ -11,8 +11,12 @@ const App = () => {
 const addTodo=()=>{
     const newTodo = {
       id:uuidv4(),
-      item:input,
+      title:input,
     }
+    setTodos([...todos,newTodo])
+
+}
+const deleteTodo =()=>{
 
 }
 
@@ -23,7 +27,12 @@ const addTodo=()=>{
       onChange={(e)=>setInput(e.target.value)}
       value={input} />
       <button onClick={addTodo}>Add task</button>
+
+        
+
       <button onClick={()=>deleteTodo(input.id)}>Delete</button>
+      <button onClick={()=>editTodo(input,id.input,title)}>Edit</button>
+      <button onClick={()=>saveTodo(input,id)}>Save</button>
 
     </div>
 
