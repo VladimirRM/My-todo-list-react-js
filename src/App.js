@@ -28,6 +28,14 @@ const App = () => {
       onChange={(e)=>setInput(e.target.value)}
       value={input} />
       <button onClick={addTodo}>Add</button>
+      <ul>
+      {todos.map(input=>(
+        <li key={input.id}>
+          {input.title}
+        </li>
+      ))}
+
+      </ul>
       
     </div>
   )
