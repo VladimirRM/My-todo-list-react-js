@@ -4,7 +4,7 @@ const App = () => {
   const [input, setInput] = useState("");
   const [todos, setTodos] = useState([]);
   const [edit, setEdit] = useState(null);
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
 
   const addTodo = () => {
     const newTodo = {
@@ -12,19 +12,26 @@ const App = () => {
       title: input,
     };
     setTodos([...todos, newTodo]);
-    setInput('')
+    setInput("");
   };
 
-
-  const deleteTodo =()=>{
-    
-  }
-  const editTodo =()=>{
-
-  }
-  const saveTodo =()=>{
-
-  }
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((input) => input.id !== id));
+  };
+  const editTodo = (id, title) => {
+    setEdit(id);
+    setValue(title);
+  };
+  const saveTodo = (id) => {
+    const newTodo = [...todos].map((input) => {
+      if (input.id === id) {
+        input.title = value;
+      }
+      return input;
+    });
+    setTodos(newTodo);
+    setEdit(null);
+  };
 
   return (
     <div>
@@ -37,29 +44,29 @@ const App = () => {
       <ul>
         {todos.map((input) => (
           <li key={input.id}>
-            {input.title}
-            {edit ===input.id?
-          <div>
-            <input type="text"
-            onChange={(e)=>setValue(e.target.value)}
-            value={value}
-            
-            />
-          </div>  :
-          <div></div> 
-          }
-            {input ?
-          <div>
-            <button onClick={()=>deleteTodo(input.id)}>Delete</button>
-            <button onClick={()=>editTodo(input.id,input.title)}>Edit</button>
-            <button onClick={()=>saveTodo(input.id)}>Save</button>
-
-          </div>  :
-          <div></div> 
-          }
-            
-            
-            </li>
+            {edit === input.id ? (
+              <div>
+                <input
+                  type="text"
+                  onChange={(e) => setValue(e.target.value)}
+                  value={value}
+                />
+              </div>
+            ) : (
+              <div>{input.title}</div>
+            )}
+            {input ? (
+              <div>
+                <button onClick={() => deleteTodo(input.id)}>Delete</button>
+                <button onClick={() => editTodo(input.id, input.title)}>
+                  Edit
+                </button>
+                <button onClick={() => saveTodo(input.id)}>Save</button>
+              </div>
+            ) : (
+              <div></div>
+            )}
+          </li>
         ))}
       </ul>
     </div>
