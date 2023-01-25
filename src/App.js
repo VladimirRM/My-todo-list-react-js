@@ -28,7 +28,13 @@ const App = () => {
           <li key={input.id}>
             {input.title}
             {edit ===input.id?
-          <div></div>  :
+          <div>
+            <input type="text"
+            onChange={(e)=>setValue(e.target.value)}
+            value={value}
+            
+            />
+          </div>  :
           <div></div> 
           }
             {input ?
