@@ -10,6 +10,7 @@ const [todos,setTodos]= useState([])
      <input type="text"
      onChange={(e)=>setInput(e.target.value)}
      value={input} />
+     <button onClick={addTodo}>Add</button>
 
 
     </div>
