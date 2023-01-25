@@ -4,6 +4,7 @@ const App = () => {
   const [input, setInput] = useState("");
   const [todos, setTodos] = useState([]);
   const [edit, setEdit] = useState(null);
+  const [value, setValue] = useState('');
 
 const addTodo=()=>{
   const newTodo = {
@@ -30,7 +31,9 @@ const addTodo=()=>{
         <li>
           {input.title}
           {edit.id===id ?
-          <div></div>:
+          <div>
+
+          </div>:
           <div></div>
           }
           {input.id===id ?
