@@ -14,6 +14,9 @@ const App = () => {
     setTodos([...todos, newTodo]);
     setInput("");
   };
+  const editTodo = ()=>{
+    
+  }
 
   return (
     <div>
@@ -39,6 +42,8 @@ const App = () => {
             ) : (
               <div>
                 <button onClick={()=>deleteTodo(input.id)}>Delete</button>
+                <button onClick={()=>editTodo(input.id)}>Edit</button>
+                <button onClick={()=>saveTodo(input.id)}>Delete</button>
               </div>
             )}
             {input.id === id ? <div></div> : <div></div>}
