@@ -32,7 +32,10 @@ const addTodo=()=>{
           {input.title}
           {edit.id===id ?
           <div>
-
+     <input type="text" 
+     onChange={(e)=>setValue(e.target.value)}
+     value={value}
+     />
           </div>:
           <div></div>
           }
