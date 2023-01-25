@@ -31,7 +31,14 @@ const addTodo=()=>{
           {input.title}
           {edit.id===id ?
           <div></div>:
-          <div></div>}
+          <div></div>
+          }
+          {input.id===id ?
+          <div></div>:
+          <div></div>
+          }
+         
+
         </li>
       ))}
     </ul>
