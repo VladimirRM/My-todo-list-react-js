@@ -4,17 +4,16 @@ const App = () => {
   const [input, setInput] = useState("");
   const [todos, setTodos] = useState([]);
   const [edit, setEdit] = useState(null);
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
 
-const addTodo=()=>{
-  const newTodo = {
-    id:Math.random(),
-    title:input,
-  }
-  setTodos([...todos,newTodo])
-  setInput('')
-}
-
+  const addTodo = () => {
+    const newTodo = {
+      id: Math.random(),
+      title: input,
+    };
+    setTodos([...todos, newTodo]);
+    setInput("");
+  };
 
   return (
     <div>
@@ -25,29 +24,27 @@ const addTodo=()=>{
       />
       <button onClick={addTodo}>Add</button>
 
-
-    <ul>
-      {todos.map(input=>(
-        <li>
-          {input.title}
-          {edit.id===id ?
-          <div>
-     <input type="text" 
-     onChange={(e)=>setValue(e.target.value)}
-     value={value}
-     />
-          </div>:
-          <div></div>
-          }
-          {input.id===id ?
-          <div></div>:
-          <div></div>
-          }
-         
-
-        </li>
-      ))}
-    </ul>
+      <ul>
+        {todos.map((input) => (
+          <li key={input.id}>
+            {input.title}
+            {edit.id === id ? (
+              <div>
+                <input
+                  type="text"
+                  onChange={(e) => setValue(e.target.value)}
+                  value={value}
+                />
+              </div>
+            ) : (
+              <div>
+                <button onClick={()=>deleteTodo(input.id)}>Delete</button>
+              </div>
+            )}
+            {input.id === id ? <div></div> : <div></div>}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
